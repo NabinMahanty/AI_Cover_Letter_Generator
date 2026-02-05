@@ -3,58 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Cover Letter Generator</title>
+    <title>AI Cover Letter Generator - Create Professional Cover Letters</title>
+    <meta
+      name="description"
+      content="Generate professional cover letters using AI in seconds. Perfect for job applications."
+    />
+
     <link rel="stylesheet" href="style.css" />
-    <!-- Google Font -->
+    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div class="container">
       <h1>AI Cover Letter Generator</h1>
-      <p class="subtitle">Generate a professional cover letter in seconds</p>
+      <p class="subtitle">
+        Generate a professional cover letter with AI in seconds
+      </p>
 
       <!-- Input Form -->
       <form id="coverForm">
         <div class="form-group">
-          <label>Candidate Name</label>
-          <input type="text" id="name" required />
+          <label for="name">Candidate Name *</label>
+          <input type="text" id="name" placeholder="e.g. John Doe" required />
         </div>
 
         <div class="form-group">
-          <label>Job Role</label>
-          <input type="text" id="role" required />
+          <label for="role">Job Role *</label>
+          <input
+            type="text"
+            id="role"
+            placeholder="e.g. Software Engineer"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label>Company Name</label>
-          <input type="text" id="company" required />
+          <label for="company">Company Name *</label>
+          <input type="text" id="company" placeholder="e.g. Google" required />
         </div>
 
         <div class="form-group">
-          <label>Key Skills</label>
+          <label for="skills">Key Skills *</label>
           <textarea
             id="skills"
-            placeholder="e.g. Python, Data Analysis, Machine Learning"
+            placeholder="e.g. Python, Data Analysis, Machine Learning, Team Leadership"
             required
           ></textarea>
         </div>
 
-        <button type="submit">Generate Cover Letter</button>
+        <!-- Job Description -->
+        <div class="form-group">
+          <label for="jobDescription">Job Description</label>
+          <textarea
+            id="jobDescription"
+            placeholder="Paste the job description here for better personalization..."
+            rows="4"
+          ></textarea>
+        </div>
+
+        <!-- Resume Upload -->
+        <div class="form-group file-upload-wrapper">
+          <label>Upload Resume (PDF)</label>
+          <label class="file-upload-label">
+            <input type="file" id="resumeFile" accept=".pdf" />
+            <span>📄 Click to upload your resume (PDF only, max 5MB)</span>
+          </label>
+          <div class="file-name" id="fileName"></div>
+        </div>
+
+        <button type="submit" id="submitBtn">Generate Cover Letter</button>
       </form>
 
-      <!-- Loading -->
-      <div class="loader" id="loader">Generating your cover letter...</div>
+      <!-- Loading State -->
+      <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Generating your cover letter...</div>
+      </div>
 
       <!-- Output -->
       <div class="output-box" id="outputBox">
         <label>Generated Cover Letter</label>
         <textarea id="outputText" readonly></textarea>
-        <button class="copy-btn" onclick="copyText()">Copy to Clipboard</button>
+        <div class="button-group">
+          <button type="button" class="copy-btn" id="copyBtn">
+            📋 Copy to Clipboard
+          </button>
+          <button type="button" class="download-btn" id="downloadBtn">
+            💾 Download as TXT
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Copied to clipboard!</div>
 
     <script src="script.js"></script>
   </body>

@@ -1,1 +1,25 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment Variables (CRITICAL - Never commit!)
 .env
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Uploads (temporary files)
+uploads/
+*.pdf
