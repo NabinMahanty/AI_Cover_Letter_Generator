@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>AI Cover Letter Generator</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<main class="page">
+			<section class="card">
+				<header class="header">
+					<div>
+						<p class="eyebrow">AI Cover Letter Generator</p>
+						<h1>Write your cover letter in seconds</h1>
+						<p class="subtext">
+							Enter your details and let Gemini craft a professional cover
+							letter.
+						</p>
+					</div>
+					<div class="badge">Level 2 • Gemini API</div>
+				</header>
+
+				<form id="cover-form" class="form">
+					<div class="grid">
+						<label class="field">
+							<span>Candidate Name</span>
+							<input
+								type="text"
+								name="name"
+								placeholder="Alex Johnson"
+								required
+							/>
+						</label>
+						<label class="field">
+							<span>Job Role</span>
+							<input
+								type="text"
+								name="role"
+								placeholder="Product Designer"
+								required
+							/>
+						</label>
+						<label class="field">
+							<span>Company Name</span>
+							<input
+								type="text"
+								name="company"
+								placeholder="Northwind"
+								required
+							/>
+						</label>
+						<label class="field">
+							<span>Key Skills</span>
+							<input
+								type="text"
+								name="skills"
+								placeholder="User research, Figma, Design systems"
+								required
+							/>
+						</label>
+					</div>
+
+					<label class="field">
+						<span>Job Description</span>
+						<textarea
+							name="jobDescription"
+							rows="6"
+							placeholder="Paste the job description here..."
+							required
+						></textarea>
+					</label>
+
+					<button type="submit" class="primary">
+						<span class="button-text">Generate Cover Letter</span>
+						<span class="loader" aria-hidden="true"></span>
+					</button>
+				</form>
+			</section>
+
+			<section class="card output">
+				<div class="output-header">
+					<div>
+						<h2>Generated Letter</h2>
+						<p class="subtext">Ready to copy and send.</p>
+					</div>
+					<button id="copy-btn" class="ghost" disabled>Copy</button>
+				</div>
+				<textarea
+					id="output"
+					rows="14"
+					readonly
+					placeholder="Your letter will appear here..."
+				></textarea>
+			</section>
+		</main>
+
+		<script src="app.js"></script>
+	</body>
+</html>

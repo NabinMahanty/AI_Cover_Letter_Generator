@@ -1,25 +1,11 @@
-# Dependencies
-node_modules/
-package-lock.json
-
-# Environment Variables (CRITICAL - Never commit!)
 .env
-
-# Logs
-*.log
+node_modules/
+dist/
+build/
+.npmrc
+.pnpm-debug.log*
 npm-debug.log*
-logs/
-
-# OS Files
+yarn-debug.log*
+yarn-error.log*
 .DS_Store
 Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Uploads (temporary files)
-uploads/
-*.pdf
